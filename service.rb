@@ -14,7 +14,10 @@ get '/' do
   erb :index
 end
 
-
 get '/lessions' do
   erb :lessions
+end
+
+get '/improve' do
+  erb :improve
 end
