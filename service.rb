@@ -1,31 +1,29 @@
 # encoding: utf-8
 
-require 'sinatra'
+require 'sinatra/base'
 
-get '/ru' do
-  erb :index_ru
-end
+class SimpleFingerstyle < Sinatra::Application
+  get '/' do
+    erb :index, layout: :layout_en
+  end
 
-get '/en' do
-  erb :index
-end
+  get '/lessions' do
+    erb :lessions, layout: :layout_en
+  end
 
-get '/' do
-  erb :index
-end
+  get '/improve' do
+    erb :improve, layout: :layout_en
+  end
 
-get '/lessions' do
-  erb :lessions
-end
+  get '/ru' do
+    erb :index_ru, layout: :layout_ru
+  end
 
-get '/ru/lessions' do
-  erb :ru_lessions
-end
+  get '/ru/lessions' do
+    erb :ru_lessions, layout: :layout_ru
+  end
 
-get '/improve' do
-  erb :improve
-end
-
-get '/ru/improve' do
-  erb :ru_improve
+  get '/ru/improve' do
+    erb :ru_improve, layout: :layout_ru
+  end
 end
